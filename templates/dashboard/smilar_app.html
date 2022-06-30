@@ -1,0 +1,87 @@
+search_profil
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<style>
+    .custom-select {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    </style>
+{% endblock %}
+{% block page_title %}
+ Buttons
+{% endblock %}
+{% block content %}
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Smilar App</h4>
+                <div class="ml-auto text-right">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'dashboard:dashboard' %}" >Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Buttons</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<nav class="navbar navbar-expand-md navbar-fixed-top navbar-dark bg-dark main-nav">
+
+<div class="d-flex justify-content-xl-center" >
+  <form action="{% url 'dashboard:categorie' %}" method="get">
+    <fieldset>    
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <select id="Categorie" name="Categorie"  class="custom-select bg-primary text-light">
+            <option selected="selected" value="0">Catégorie</option>
+            <option name ="1" value="ART_AND_DESIGN">ART_AND_DESIGN</option>
+            <option name ="1" value="AUTO_AND_VEHICLES">AUTO_AND_VEHICLES</option>
+            <option name ="1" value="BEAUTY">BEAUTY</option>
+            <option name ="1" value="BOOKS_AND_REFERENCE">BOOKS_AND_REFERENCE</option>
+            <option name ="1" value="BUSINESS">BUSINESS</option>
+            <option name ="1" value="COMICS">COMICS</option>
+            <option name ="1" value="COMMUNICATION">COMMUNICATION</option>
+            <option name ="1" value="DATING">DATING</option>
+            <option name ="1" value="EDUCATION">EDUCATION</option>
+            <option name ="1" value="ENTERTAINMENT">ENTERTAINMENT</option>
+            <option name ="1" value="EVENTS">EVENTS</option>
+            <option name ="1" value="FAMILY">FAMILY</option>
+            <option name ="1" value="FINANCE">FINANCE</option>
+            <option name ="1" value="FOOD_AND_DRINK">FOOD_AND_DRINK</option>
+            <option name ="1" value="GAME">GAME</option>
+            <option name ="1" value="HEALTH_AND_FITNESS">HEALTH_AND_FITNESS</option>
+            <option name ="1" value="HOUSE_AND_HOME">HOUSE_AND_HOME</option>
+            <option name ="1" value="LIBRARIES_AND_DEMO">LIBRARIES_AND_DEMO</option>
+            <option name ="1" value="LIFESTYLE">LIFESTYLE</option>
+            <option name ="1" value="APS_AND_NAVIGATION">APS_AND_NAVIGATION</option>
+            <option name ="1" value="MEDICAL">MEDICAL</option>
+            <option name ="1" value="NEWS_AND_MAGAZINES">NEWS_AND_MAGAZINES</option>
+            <option name ="1" value="PARENTING">PARENTING</option>
+            <option name ="1" value="PERSONALIZATION">PERSONALIZATION</option>
+            <option name ="1" value="PHOTOGRAPHY">PHOTOGRAPHY</option>
+            <option name ="1" value="RODUCTIVITY">RODUCTIVITY</option>
+            <option name ="1" value="SHOPPING">SHOPPING</option>
+            <option name ="1" value="SOCIAL">SOCIAL</option>
+            <option name ="1" value="SPORTS">SPORTS</option>
+            <option name ="1" value="TOOLS">TOOLS</option>
+            <option name ="1" value="TRAVEL_AND_LOCAL">TRAVEL_AND_LOCAL</option>
+            <option name ="1" value="VIDEO_PLAYERS">VIDEO_PLAYERS</option>
+            <option name ="1" value="EATHER">EATHER</option>
+          </select>
+        </div>
+        
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="submit">Recherche</button>
+        </div>
+      </div>
+    </fieldset> 
+  </form>
+</div>
+</nav>
+{% endblock %}

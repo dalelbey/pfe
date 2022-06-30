@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+    <style xmlns="http://www.w3.org/1999/html">
+    </style>
+{% endblock %}
+{% block page_title %}
+ Buttons
+{% endblock %}
+{% block content %}
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Review Analysis</h4>
+                <div class="ml-auto text-right">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'dashboard:dashboard' %}" >Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Buttons</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form action="{% url 'dashboard:searchreview' %}" method="get" >
+     <div class="row">
+        <div class="col col-lg-8">
+        </div>
+        <div class="col col-lg-2">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="search">
+           
+        </div>
+        <div class="col col-lg-2">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+        </div>
+     </div>
+
+    </form>
+
+   
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <!-- Chart-1 -->
+        
+        <div>
+           
+            <div class="row justify-content-center">
+                <div class="col-md-1 offset-md-31">
+                    <img src="{{icon|safe}}"  width="60%" min-height="80px" />
+                </div>
+                <div class="col-lg-9">
+                    <h1  style="color:'rgba(255,49,17)'" >{{title|safe}}</h1>
+                </div>
+            </div>
+                 
+            
+            
+             
+           
+            <hr>
+            <h5 class="card-subtitle">Count of Reviews by Stars</h5>
+            
+            <form action="{% url 'dashboard:download' %}" method="post">{% csrf_token %}
+
+            <a href="{% url 'dashboard:download' %}"><button value="reviewsyonisapp.csv" name="filename" type="submit" class="ma-export-button ant-btn ant-btn-type" ant-click-animating-without-extra-node="false" style="float: right;"><span><svg data-v-3742b66e="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="download" role="img"  viewBox="0 0 512 512" class="svg-inline--fa fa-download fa-1x ma-undefined"><path data-v-3742b66e="" fill="currentColor" d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z" class=""></path></svg>
+                CSV</span>
+            </button></a>
+            </form>
+
+        </div>
+        <canvas id="myChart" width="50" height="20"></canvas>
+        <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: {{ay|safe}},
+                datasets: [{
+                    label: '# Review Stars',
+                    
+                    backgroundColor: [
+                    'rgba(102,102 ,255)',
+                    'rgba(51, 51, 255)',
+                    'rgba(0, 0,255)',
+                    'rgba(0, 0,204)',
+                    'rgba(0,0 ,153)',
+                    
+      
+                  ],
+                   
+                    borderColor: 'rgba(153, 102, 255, 1)',
+
+                    borderWidth: 1,
+                    data: {{ax|safe}}
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        </script>
+    </div>
+
+         
+        <!-- ENd chart-1 -->
+
+
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <!-- Chart-1 -->
+            <div>
+                
+                <h5 class="card-subtitle">review sentiment</h5>
+                <form action="{% url 'dashboard:download' %}" method="post">{% csrf_token %}
+
+                    <a href="{% url 'dashboard:download' %}"><button value="review_analyss_yonisapp.csv" name="filename" type="submit" class="ma-export-button ant-btn ant-btn-type" ant-click-animating-without-extra-node="false" style="float: right;"><span><svg data-v-3742b66e="" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="download" role="img"  viewBox="0 0 512 512" class="svg-inline--fa fa-download fa-1x ma-undefined"><path data-v-3742b66e="" fill="currentColor" d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z" class=""></path></svg>
+                        CSV</span>
+                    </button></a>
+                </form>
+            </div>
+            <canvas id="myChart1" width="50" height="20"></canvas>
+            <script>
+            const ctx1 = document.getElementById('myChart1').getContext('2d');
+            const myChart1 = new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: ['positive' ,'neutral','negative' ],
+                    datasets: [{
+                        label: '# pourcentage %',
+                        
+                    backgroundColor: [
+                    'rgba(40, 183, 121)',
+                    'rgba(255, 184, 72)',
+                    'rgba(255,49,17)',
+                    
+      
+                  ],
+                       
+                        borderColor: 'rgba(153, 102, 255, 1)',
+    
+                        borderWidth: 1,
+                        data: [{{pos|safe}}, {{neu|safe}}, {{neg|safe}}],
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            </script>
+        </div>
+    
+             
+            <!-- ENd chart-2 -->
+    
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Exemlples of Review</h4>
+                </div>
+                <div class="comment-widgets scrollable">
+                    <!-- Comment Row -->
+                    <!-- Comment Row -->
+                    <div class="d-flex flex-row comment-row">
+                        <div class="p-2"><img src="{{userImage1|safe}}" alt="user" width="50" class="rounded-circle"></div>
+                        <div class="comment-text active w-100">
+                            <h6 class="font-medium">{{userName1|safe}}</h6>
+                            <span class="m-b-15 d-block">{{review1|safe}} </span>
+                            <div class="comment-footer">
+                                <span class="text-muted float-right">{{at1|safe}}</span> 
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Comment Row -->
+                    <div class="d-flex flex-row comment-row">
+                        <div class="p-2"><img src="{{userImage2|safe}}" alt="user" width="50" class="rounded-circle"></div>
+                        <div class="comment-text w-100">
+                            <h6 class="font-medium">{{userName2|safe}}</h6>
+                            <span class="m-b-15 d-block">{{review2|safe}}. </span>
+                            <div class="comment-footer">
+                                <span class="text-muted float-right">{{at1|safe}}</span> 
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Comment Row -->
+                    <div class="d-flex flex-row comment-row">
+                        <div class="p-2"><img src="{{userImage3|safe}}" alt="user" width="50" class="rounded-circle"></div>
+                        <div class="comment-text w-100">
+                            <h6 class="font-medium">{{userName3|safe}}</h6>
+                            <span class="m-b-15 d-block">{{review3|safe}}. </span>
+                            <div class="comment-footer">
+                                <span class="text-muted float-right">{{at1|safe}}</span> 
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+   
+        
+    {% endblock %}

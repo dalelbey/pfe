@@ -1,34 +1,470 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-</head>
-<body>
+{% load static %}
+<!DOCTYPE html> 
+<html lang="en-US"> 
+     
+   <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+    <title>App Vision</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link href="{% static 'assets/img/favicon.png ' %}" rel="icon">
+    <link href="{% static 'assets/img/apple-touch-icon.png ' %}"rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/aos/aos.css ' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css ' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css ' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css ' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css ' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css ' %}" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="{% static 'assets/css/style.css ' %}" rel="stylesheet">
+  
+    
+  </head>
+  
+  <body>
+  
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top  header-transparent ">
+      <div class="container d-flex align-items-center justify-content-between">
+  
+        <div class="logo">
+          <h1>
+          <img src="{% static 'assets/img/logo.png ' %}" class=""width="90" height="200"><a href="index.html"><b>App Vision</b></a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="index.html"><img src="{% static 'assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+  
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li><a class="nav-link scrollto" href="#features">App Features</a></li>
+            <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+            <li><a class="nav-link scrollto" href="#pricing">Top Charts & New Apps</a></li>
+           
+          
+            <li><a class="nav-link scrollto" href="contact">Contact</a></li>
+            <li><a class="getstarted scrollto" href="signin">Log in</a></li>
+            <li><a class="getstarted scrollto" href="signup">SignUp</a></li>
+            
+            
+            
 
-    {% for message in messages %}
-    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-        <strong>Message:</strong> {{ message }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-    </div>
-    {% endfor %}
-
-    <h3>Welcome to GeeksForGeeks!</h3>
-
-
-    {% if user.is_authenticated %}
-    <h3>Hello {{fname}}!</h3>
-    <h4>You're successfully logged in.</h4>
-    <button type="submit"><a href="/signout">SignOut</a></button>
-    {% else %}
-    <button type="submit"><a href="/signup">SignUp</a></button>
-    <br/>
-    <br/>
-    <button type="submit"><a href="/signin">SignIn</a></button>
-    {% endif %}
-</body>
-</html>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+  
+      </div>
+    </header><!-- End Header -->
+  
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+  
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 d-lg-flex flex-lg-column justify-content-center align-items-stretch pt-5 pt-lg-0 order-2 order-lg-1" data-aos="fade-up">
+            <div>
+              <h1>All-in-One App Marketing Intelligence Platform</h1>
+              <h2> Make smarter decisions,Unlock your competitors,make downloads on applications, analyze the data of your competitors, Discover the latest advertising trends</h2>
+              <a href="#" class="download-btn"><i class="bx bxl-play-store"></i> Google Play</a>
+      
+            </div>
+          </div>
+          <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img" data-aos="fade-up">
+            <img src="{% static 'assets/img/hero-img.png ' %}" class="img-fluid" alt="">
+          </div>
+        </div>
+      </div>
+  
+    </section><!-- End Hero -->
+  
+    <main id="main">
+  
+      <!-- ======= App Features Section ======= -->
+      <section id="features" class="features">
+        <div class="container">
+  
+          <div class="section-title">
+            <h2>App Features</h2>
+            <p > <b> Make Your App a Success Story</b><br>
+              Reveal the best strategies of your competitors and leverage them to enhance your product's performance.</p>
+          </div>
+  
+          <div class="row no-gutters">
+            <div class="col-xl-7 d-flex align-items-stretch order-2 order-lg-1">
+              <div class="content d-flex flex-column justify-content-center">
+                <div class="row">
+                  <div class="col-md-6 icon-box" data-aos="fade-up">
+                    <i class="bx bx-receipt"></i>
+                    <h4>Powerful App Store Analytics for All of Your Apps</h4>
+                    <p>Track all of your apps in one place</p>
+                  </div>
+                  <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                    <i class="bx bx-cube-alt"></i>
+                    <h4>Review Monitoring</h4>
+                    <p>analyze app reviews.</p>
+                  </div>
+                  <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                    <i class="bx bx-images"></i>
+                    <h4>App Intelligence</h4>
+                    <p>Get the app store information you need</p>
+                  </div>
+                  <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+                    <i class="bx bx-shield"></i>
+                    <h4>Market Intelligence</h4>
+                    <p>Get up-to-date insights about the market's most crucial metrics and
+                      position your app better with accurate and reliable data.</p>
+                  </div>
+                  <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+                    <i class="bx bx-atom"></i>
+                    <h4>Top Apps & Publishers</h4>
+                    <p>Discover the top downloaded apps by filtering through categories, location and date intervals.</p>
+                  </div>
+                  <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+                    <i class="bx bx-id-card"></i>
+                    <h4>Download, Revenue & Usage Estimates</h4>
+                    <p>Find the most accurate daily and historical data on the download and revenue estimations of any app!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="image col-xl-5 d-flex align-items-stretch justify-content-center order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+              <img src="{% static 'assets/img/features.svg ' %}" class="img-fluid" alt="">
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- End App Features Section -->
+  
+      <!-- ======= Details Section ======= -->
+      <section id="details" class="details">
+        <div class="container">
+  
+          <div class="row content">
+            <div class="col-md-4" data-aos="fade-right">
+              <img src="{% static 'assets/img/details-1.png ' %}" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-8 pt-4" data-aos="fade-up">
+              <h3>Make your app business, big business.</h3>
+              <p class="fst-italic">
+                Set your app up for success – amplify your growth & insights with our tools
+              </p>
+              <ul>
+                <li><i class="bi bi-check"></i> View all app data in one place.</li>
+                <li><i class="bi bi-check"></i> Track top charts and rank history.</li>
+                <li><i class="bi bi-check"></i> Get download and revenue estimates.</li>
+                <li><i class="bi bi-check"></i> Understand detailed usage data
+                  .</li>
+              </ul>
+              <p>
+               <b> Ready to grow?</b>
+              </p>
+            </div>
+          </div>
+  
+          <div class="row content">
+            <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
+              <img src="{% static 'assets/img/details-2.png ' %}" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
+              <h3>Why do you use our platform?</h3>
+              <p class="fst-italic">
+            <p>    
+  Our app consultants regularly manage app store updates and ads on  Google Play Store for our clients.
+  
+  <br>
+            </p>
+            <p>The main benefits of app store optimization services are time savings, flexibility as well as lowering app advertising costs. Our goal is to grow apps through improving the app visibility as well as performance in app stores.
+  
+  Together we can achieve higher average conversion rates through optimizing your organic and paid app user acquisition.
+            </p> </p>
+             </div>
+          </div>
+  
+          <div class="row content">
+            <div class="col-md-4" data-aos="fade-right">
+              <img src="{% static 'assets/img/details-3.png ' %}" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-8 pt-5" data-aos="fade-up">
+              <h3>App Profile
+              </h3>
+              
+              <p>
+                Find basic and up-to-date information on all the apps using App Profile.
+  
+                View the review breakdown, the number of downloads, revenue estimates, and the most recent reviews.</p>
+                <p>
+                
+                Discover your app’s and the competitors’ visibility scores to understand your stance in the market.
+            
+            <p/>  </div>
+          </div>
+  
+          <div class="row content">
+            <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
+              <img src="{% static 'assets/img/details-4.png ' %}" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
+              <h3>analyze the sentiment of reviews</h3>
+              <p class="fst-italic">
+               
+                Browse all the reviews easily to understand your customers’ needs.
+              </p><p>
+  Uncover the frequently mentioned keywords in reviews to detect the possible issues or new feature ideas from your users.
+              </p><p>
+  See the review breakdown and filter all the results by the markets, the dates, and the review type.
+              </p>
+              
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- End Details Section -->
+  
+      <!-- ======= Gallery Section ======= -->
+      <section id="gallery" class="gallery">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-title">
+            <h2>Gallery</h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          </div>
+  
+        </div>
+  
+        <div class="container-fluid" data-aos="fade-up">
+          <div class="gallery-slider swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><a href="{% static 'assets/img/gallery/gallery-1.png' %}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="assets/img/gallery/gallery-1.png" class="img-fluid" alt=""></a></div>
+              <div class="swiper-slide"><a href="{% static 'assets/img/gallery/gallery-2.png' %}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="assets/img/gallery/gallery-2.png" class="img-fluid" alt=""></a></div>
+              <div class="swiper-slide"><a href="{% static 'assets/img/gallery/gallery-3.png' %}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="assets/img/gallery/gallery-3.png" class="img-fluid" alt=""></a></div>
+              <div class="swiper-slide"><a href="{% static 'assets/img/gallery/gallery-4.png' %}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="assets/img/gallery/gallery-4.png" class="img-fluid" alt=""></a></div>
+              <div class="swiper-slide"><a href="{% static 'assets/img/gallery/gallery-5.png' %}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="assets/img/gallery/gallery-5.png" class="img-fluid" alt=""></a></div>
+              <div class="swiper-slide"><a href="{% static 'ssets/img/gallery/gallery-6.png' %}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="assets/img/gallery/gallery-6.png" class="img-fluid" alt=""></a></div>
+              <div class="swiper-slide"><a href="{% static 'assets/img/gallery/gallery-7.png' %}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="assets/img/gallery/gallery-7.png" class="img-fluid" alt=""></a></div>
+              <div class="swiper-slide"><a href="{% static 'assets/img/gallery/gallery-8.png' %}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="assets/img/gallery/gallery-8.png" class="img-fluid" alt=""></a></div>
+              <div class="swiper-slide"><a href="{% static 'assets/img/gallery/gallery-9.png' %}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="assets/img/gallery/gallery-9.png" class="img-fluid" alt=""></a></div>
+              <div class="swiper-slide"><a href="{% static 'assets/img/gallery/gallery-10.png' %}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="assets/img/gallery/gallery-10.png" class="img-fluid" alt=""></a></div>
+              <div class="swiper-slide"><a href="{% static 'assets/img/gallery/gallery-11.png' %}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="assets/img/gallery/gallery-11.png" class="img-fluid" alt=""></a></div>
+              <div class="swiper-slide"><a href="{% static 'assets/img/gallery/gallery-12.png' %}" class="gallery-lightbox" data-gall="gallery-carousel"><img src="assets/img/gallery/gallery-12.png" class="img-fluid" alt=""></a></div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+  
+        </div>
+      </section><!-- End Gallery Section -->
+  
+      <!-- ======= Testimonials Section ======= -->
+      <section id="testimonials" class="testimonials section-bg">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-title">
+            <h2>Join the millions of people who rely on data.ai to:</h2>
+           
+          </div>
+  
+          <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper">
+  
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <img src="{% static 'assets/img/testimonials/testimonials-1.jpg ' %}" class="testimonial-img" alt="">
+                  <h3>Understand detailed usage data</h3>
+              
+                 
+                </div>
+              </div>
+  
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <img src="{% static 'assets/img/testimonials/testimonials-2.jpg ' %}" class="testimonial-img" alt="">
+                  <h3>View all app data in one place</h3>
+              
+               
+                </div>
+              </div>
+  
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <img src="{% static 'assets/img/testimonials/testimonials-3.jpg ' %}" class="testimonial-img" alt="">
+                  <h3>Track top charts and rank history</h3>
+                 
+                 
+                </div>
+              </div>
+  
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <img src="{% static 'assets/img/testimonials/testimonials-4.jpg ' %}" class="testimonial-img" alt="">
+                  <h3>Increase app discoverability</h3>
+             
+                
+                </div>
+              </div>
+  
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <img src="{% static 'assets/img/testimonials/testimonials-5.jpg ' %}" class="testimonial-img" alt="">
+                  <h3>Get download and revenue estimates</h3>
+               
+                </div>
+              </div>
+  
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+  
+        </div>
+      </section><!-- End Testimonials Section -->
+  
+      <!-- ======= Pricing Section ======= -->
+      <section id="pricing" class="pricing">
+        <div class="container">
+  
+          <div class="section-title">
+            <h2>Top Charts & New Apps</h2>
+            <p>See all top free and paid apps for a category of your choice. Breakdown the list by different app markets or countries to unveil the champions of the stores.
+            </p><p>
+              Discover the most recently published free and paid apps to stay up-to-date. Pick either App Store or Google Play and the country you’re interested in for the best use..</p>
+            </p></div>
+  
+          <div class="row no-gutters">
+  
+            <div class="col-lg-4 box" data-aos="fade-right">
+           
+              <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
+                <img src="{% static 'assets/img/1.png ' %}" class="" alt="">
+              </div>
+              <a href="#" class="get-started-btn">Get Started</a>
+            </div>
+  
+            <div class="col-lg-4 box featured" data-aos="fade-up">
+              <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
+                <img src="{% static 'assets/img/2.png ' %}" class="" alt="">
+              </div>
+             
+              <a href="#" class="get-started-btn">Get Started</a>
+            </div>
+  
+            <div class="col-lg-4 box" data-aos="fade-left">
+              <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
+                <img src="{% static 'assets/img/3.png ' %}" class="" alt="">
+              </div>
+              
+              <a href="#" class="get-started-btn">Get Started</a>
+            </div>
+  
+          </div>
+  
+        </div>
+      </section><!-- End Pricing Section -->
+  
+    
+  
+      
+  
+    </main><!-- End #main -->
+  
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+  
+      <div class="footer-newsletter">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <h4>Join Our Newsletter</h4>
+              <p>All-in-One App Marketing Intelligence Platform</p>
+              <form action="" method="post">
+                <input type="email" name="email"><input type="submit" value="Subscribe">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+  
+            <div class="col-lg-3 col-md-6 footer-contact">
+              <h3>App Vision</h3>
+              All-in-One    <p>
+              App Marketing <br>
+              Intelligence Platform   <br>
+                Tunisie <br><br>
+                <strong>Phone:</strong> +216 55476773<br>
+                <strong>Email:</strong> appvission@gmail.com<br>
+              </p>
+            </div>
+  
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>COMPARE TO</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="https://www.apptweak.com/en">AppTweak</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="https://www.mobileaction.co/">Mobile Action</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="https://sensortower.com/">Sensor Tower</a></li>
+                
+             
+              </ul>
+            </div>
+  
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Our Services</h4>
+              <ul>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">App Analytics
+                
+                 
+                  </a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#"> App Intelligence</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Top Charts & New Apps</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Optimize</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#">Reviews & Ratings Sentiment Analysis</a></li>
+              </ul>
+            </div>
+  
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Our Social Networks</h4>
+              <p>Contact Us</p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+  
+      <div class="container py-4">
+       
+       
+      </div>
+    </footer><!-- End Footer -->
+  
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+    <!-- Vendor JS Files -->
+    <script src="{% static 'assets/vendor/aos/aos.js ' %}"></script>
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js ' %}"></script>
+    <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js ' %}"></script>
+    <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js ' %}"></script>
+    <script src="{% static 'assets/vendor/php-email-form/validate.js ' %}"></script>
+  
+    <!-- Template Main JS File -->
+    <script src="{% static 'assets/js/main.js ' %}"></script>
+  
+  </body>
+  
+  </html>

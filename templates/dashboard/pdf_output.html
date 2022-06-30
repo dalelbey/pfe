@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+    <style xmlns="http://www.w3.org/1999/html">
+    </style>
+{% endblock %}
+{% block page_title %}
+ exportpdf
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                  <tr>
+                    
+                    <th scope="col">App Name</th>
+                    <th>App Logo</th>
+                    <th>Installs</th>
+                    <th>Score</th>
+                    <th>Reviews</th>
+                    <th>Ratings</th>
+                    <th>Released</th>
+                    <th>Genre</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    
+                    <td scope="row">{{title}}</td>
+                    <td><img src="{{icon}}" class="ma-app-icon-img" width="180" height="180"></td>
+                    <td>{{installs}}</td>
+                    <td>{{score}}</td>
+                    <td>{{reviews}}</td>
+                    <td>{{ratings}}</td>
+                    <td>{{released}}</td>
+                    <td>{{genre}}</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

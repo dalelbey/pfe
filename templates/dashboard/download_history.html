@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+    <style xmlns="http://www.w3.org/1999/html">
+    </style>
+{% endblock %}
+{% block page_title %}
+ Tables
+{% endblock %}
+{% block content %}
+
+
+  <body>
+        <div class="container-fluid">
+          <!-- ============================================================== -->
+          <!-- Start Page Content -->
+          <!-- ============================================================== -->
+          <div class="row">
+           
+
+
+            </div>
+            <div class="col-12">
+             
+              <div class="card">
+               
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>
+                          <label class="customcheckbox mb-3">
+                            <input type="checkbox" id="mainCheckbox" />
+                            <span class="checkmark"></span>
+                          </label>
+                        </th>
+                        <th scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">user name</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody class="customtable">
+                      {% for download in liste_downloads %}
+                      <tr>
+                        <th>
+                          <label class="customcheckbox">
+                            <input type="checkbox" class="listCheckbox" />
+                            <span class="checkmark"></span>
+                          </label>
+                        </th>
+                        <td>{{download.id}}</td>
+                        <td>{{download.file_name}}</td>
+                        <td>{{download.user}}</td>
+                        <td>{{download.time}}</td>
+                        <td> <a href="{% url 'dashboard:download' %}"><button
+                          type="button"
+                          class="btn btn-danger btn-sm text-white"
+                        >
+                        redownload         
+                        </button></a>
+                     
+                    </td>
+                      </tr>
+                   {% endfor%}
+                    
+                     
+                    
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            
+              
+            </div>
+          </div>
+          <!-- ============================================================== -->
+          <!-- End PAge Content -->
+          <!-- ============================================================== -->
+          <!-- ============================================================== -->
+          
+
+
+
+
+
+{% endblock %}

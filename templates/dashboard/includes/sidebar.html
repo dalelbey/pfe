@@ -1,0 +1,26 @@
+{% load static %}
+
+  <aside class="left-sidebar scrollable ps-container ps-theme-default ps-active-y" data-sidebarbg="skin5">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="p-t-30">
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'dashboard:dashboard' %}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'dashboard:app_profil' %}" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">App Profil</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'dashboard:search_history' %}" aria-expanded="false"><i class="fas fa-search"></i><span class="hide-menu">Search History</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/dashboard/download_history/" aria-expanded="false"><i class="m-r-10 mdi mdi-inbox-arrow-down"></i><span class="hide-menu">Download History</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'dashboard:review_analysis' %}" aria-expanded="false"><i class="fas fa-chart-line"></i><span class="hide-menu">Review Analysis</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'dashboard:smilar_app' %}" aria-expanded="false"><i class="fas fa-retweet"></i><span class="hide-menu">Smilar App</span></a></li>
+
+
+                    
+                      
+                 
+                        
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>

@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+    <style xmlns="http://www.w3.org/1999/html">
+    </style>
+{% endblock %}
+{% block page_title %}
+ Buttons
+{% endblock %}
+{% block content %}
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Smilar App</h4>
+                <div class="ml-auto text-right">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'dashboard:dashboard' %}" >Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Buttons</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Page Content -->
+          <!-- ============================================================== -->
+
+          <div class="row">
+            <div class="col-12">
+             
+            
+              <div class="card">
+                <div class="card-body">
+              
+                  <div class="table-responsive">
+                    <table
+                      id="zero_config"
+                      class="table table-striped table-bordered"
+                    >
+                      <thead>
+                        
+                        <tr>
+                            <th style= "  background:  #D3D3D3;">order</th>
+                                <th style= "  background:  #D3D3D3;">App Name</th>
+                                    <th style= "  background:  #D3D3D3;">Category</th>
+                          <th style= "  background:  #D3D3D3;">Installs</th>
+                          <th style= "  background:  #D3D3D3;">Type</th>
+                          <th style= "  background:  #D3D3D3;">price</th>
+                          <th style= "  background:  #D3D3D3;">Size </th>
+                          <th style= "  background:  #D3D3D3;">Version</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          
+                          {% for i, app_category in zipped %} 
+                          <td style= "  background: #FFFFFF;">{{i}}</td>
+                          <td style= "  background: #FFFFFF;">{{app_category.App}}</td>
+                          <td style= "  background: #FFFFFF;">{{app_category.Category}}</td>
+                          <td style= "  background: #FFFFFF;"><div class="el-progress-bar__inner" 
+                            style="width: 64%; background-color: rgb(240, 195, 48);">
+                              <div class="el-progress-bar__innerText">{{app_category.Installs}}</div></div></td>
+                          <td style= "  background: #FFFFFF;">{{app_category.Type}}</td>
+                          <td style= "  background: #FFFFFF;">{{app_category.Price}}</td>
+                          <td style= "  background: #FFFFFF;">{{app_category.Size}}</td>
+                          <td style= "  background: #FFFFFF;">{{app_category.AndroidVer}}</td>
+                        </tr>
+                        {% endfor %}
+          
+                      
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ============================================================== -->
+          <!-- End PAge Content -->
+          <!-- ============================================================== -->
+          <!-- ============================================================== -->
+
+
+          
+{% endblock %}
